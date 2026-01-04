@@ -9,7 +9,7 @@
         <!--begin::Row-->
         <div class="row">
           <div class="col-sm-6">
-            <h3 class="mb-0">Category</h3>
+            <h3 class="mb-0">Categories</h3>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-end">
@@ -173,7 +173,7 @@
         currentCategoryId = null;
         $('#addCategoryModalLabel').text('Add New Category');
         $('#save-category-btn').text('Save Category');
-        $('#category-form')[0].reset();
+        $('#productForm')[0].reset();
       });
 
       // Handle form submission for both add and update
