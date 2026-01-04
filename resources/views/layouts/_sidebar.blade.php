@@ -5,7 +5,7 @@
         <!--begin::Brand Link-->
         <a href="./index.html" class="brand-link">
             <!--begin::Brand Image-->
-            <img src="{{ asset('assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image opacity-75 shadow" />
+            <img src="{{ asset('img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image opacity-75 shadow" />
             <!--end::Brand Image-->
             <!--begin::Brand Text-->
             <span class="brand-text fw-light">POS System</span>
@@ -22,37 +22,138 @@
                 aria-label="Main navigation" data-accordion="false" id="navigation">
                 @if(Auth::user()->is_role == 1)
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon bi bi-speedometer"></i>
+                    <a href="{{ url('admin/dashboard') }}" class="nav-link active">
+                        <i class="nav-icon fa fa-dashboard"></i>
                         <p>
                             Dashboard
                         </p>
                     </a>
 
                 </li>
+                <li class="nav-header">Master</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon bi bi-table"></i>
+                    <a href="{{url('admin/category')}}" class="nav-link">
+                        <i class="nav-icon fa fa-cube"></i>
                         <p>
-                            User
+                            Category
                         </p>
                     </a>
                 </li>
-                @elseif(Auth::user()->is_role == 2)
-                                <li class="nav-item">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon bi bi-speedometer"></i>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-cubes"></i>
                         <p>
-                            Dashboard
+                            Product
                         </p>
                     </a>
-
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon bi bi-table"></i>
+                        <i class="nav-icon fa fa-id-card"></i>
+                        <p>
+                            Members
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-truck"></i>
+                        <p>
+                            Suppliers
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">TRANSACTION</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-adjust"></i>
+                        <p>
+                            Expenses
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-download"></i>
+                        <p>
+                            Purchase
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-dollar"></i>
+                        <p>
+                            Sales List
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-cart-plus"></i>
+                        <p>
+                            New Transaction
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-cart-arrow-down"></i>
+                        <p>
+                            Active Transaction
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">REPORT</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-asterisk"></i>
+                        <p>
+                            Income
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">User</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-users"></i>
+                        <p>
+                            Users
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-cogs"></i>
                         <p>
                             Settings
+                        </p>
+                    </a>
+                </li>                
+                {{-- user sidebar --}}
+                @elseif(Auth::user()->is_role == 2)
+                <li class="nav-item">
+                    <a href="{{ url('user/dashboard') }}" class="nav-link active">
+                        <i class="nav-icon fa fa-dashboard"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">TRANSACTION</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-cart-plus"></i>
+                        <p>
+                            New Transaction
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-bullhorn"></i>
+                        <p>
+                            Active Transaction
                         </p>
                     </a>
                 </li>
